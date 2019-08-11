@@ -11,107 +11,21 @@ import (
 
 // Complete the checkMagazine function below.
 func checkMagazine(magazine []string, note []string) bool {
-	re := true
-
-	magazineOccurences := make(map[string]int)
-
-	for i := 0; i < len(magazine); i++ {
-		position := magazine[i]
-		magazineOccurences[position]++
+	m := make(map[string]int)
+	fmt.Println(magazine, note)
+	for _, v := range magazine {
+		m[v]++
 	}
-
-	for n := range note {
-		noteFound := false
-		for m := range magazineOccurences {
-			if note[n] == m {
-				if magazineOccurences[m] > 0 {
-					magazineOccurences[m]--
-					noteFound = true
-				} else {
-					re = false
-				}
-				break
-			}
+	for _, d := range note {
+		v, ok := m[d]
+		if !ok || (ok && v < 1) {
+			fmt.Println("No")
+			return false
 		}
-		if noteFound == false {
-			re = false
-			break
-		}
+		m[d]--
 	}
-
-	if re {
-		fmt.Printf("Yes");
-	} else {
-		fmt.Printf("No");
-	}
-
-	return re
-
-	/*
-	magazineOccurences := make(map[string]int)
-	noteOccurences := make(map[string]int)
-
-	re := true
-
-	for i := 0; i < len(magazine); i++ {
-		position := magazine[i]
-		magazineOccurences[position]++
-	}
-
-
-	for i := 0; i < len(note); i++ {
-		position := note[i]
-		noteOccurences[position]++
-	}
-
-	re = true
-	for n := range noteOccurences {
-		for m := range magazineOccurences {
-			if n == m {
-				if magazineOccurences[m] < 1 {
-					re = false
-				} else {
-					magazineOccurences[m]--
-					noteOccurences[n]--
-				}
-			}
-		}
-	}
-
-	for n:= range noteOccurences {
-		if noteOccurences[n] > 0 {
-			re = false
-		}
-	}
-
-	if re {
-		fmt.Printf("Yes");
-	} else {
-		fmt.Printf("No");
-	}
-
-	return re
-	*/
-
-	/*
-	for itN := range note {
-		bFind := false
-		for itM := range magazine {
-			if itN == itM {
-				bFind = true
-				break
-			}
-			itM++
-		}
-
-		if bFind == false {
-			fmt.Printf("No")
-			return;
-		}
-	}
-	fmt.Printf("Yes")
-	return;
-*/
+	fmt.Println("Yes")
+	return true
 }
 
 func main() {
