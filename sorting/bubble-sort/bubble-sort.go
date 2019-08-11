@@ -27,9 +27,9 @@ func countSwaps(arr []int32) []int {
 	}
 
 	// fmt.Println(x)
-	fmt.Println("Array is sorted in ", swaps, " swaps.")
-	fmt.Println("First Element: ", arr[0])
-	fmt.Print("Last Element: ", arr[len(arr) - 1])
+	fmt.Printf("Array is sorted in %v swaps.\n", swaps)
+	fmt.Printf("First Element: %v\n", arr[0])
+	fmt.Printf("Last Element: %v\n", arr[len(arr) - 1])
 
 	out = []int{swaps, int(arr[0]), int(arr[len(arr) - 1])}
 
