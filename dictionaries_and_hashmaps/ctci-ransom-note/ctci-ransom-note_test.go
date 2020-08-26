@@ -2,10 +2,10 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	magazine []string;
-	note []string;
-	out bool;
+var testcases = []struct {
+	magazine []string
+	note     []string
+	out      bool
 }{
 	{[]string{"ive", "got", "a", "lovely", "bunch", "of", "coconuts"},
 		[]string{"ive", "got", "some", "coconuts"},
@@ -34,7 +34,6 @@ func TestCtciRansomNote(t *testing.T) {
 		}
 	}
 }
-
 
 func BenchmarkCtciRansomNote(b *testing.B) {
 	println(b.N)

@@ -2,16 +2,16 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	s1 string;
-	s2 string;
-	out string;
-} {
+var testcases = []struct {
+	s1  string
+	s2  string
+	out string
+}{
 	{"abba", "a", "YES"},
 	{"abba", "c", "NO"},
 }
 
-func TestTwoStrings(t *testing.T)  {
+func TestTwoStrings(t *testing.T) {
 	t.Parallel()
 
 	for _, c := range testcases {

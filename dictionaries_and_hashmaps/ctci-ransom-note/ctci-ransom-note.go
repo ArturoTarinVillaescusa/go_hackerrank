@@ -29,7 +29,7 @@ func checkMagazine(magazine []string, note []string) bool {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	mn := strings.Split(readLine(reader), " ")
 
@@ -76,4 +76,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

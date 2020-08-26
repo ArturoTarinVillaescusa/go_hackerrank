@@ -25,14 +25,14 @@ func rotLeft(a []int32, d int32) []int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nd := strings.Split(readLine(reader), " ")
 
@@ -60,7 +60,7 @@ func main() {
 	for i, resultItem := range result {
 		fmt.Fprintf(writer, "%d", resultItem)
 
-		if i != len(result) - 1 {
+		if i != len(result)-1 {
 			fmt.Fprintf(writer, " ")
 		}
 	}

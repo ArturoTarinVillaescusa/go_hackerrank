@@ -4,15 +4,16 @@ import (
 	"testing"
 )
 
-var testcases = []struct{
-	in string;
-	out int32;
+var testcases = []struct {
+	in  string
+	out int32
 }{
-	{ "U D D U U U D U U U U", 1},
+	{"U D D U U U D U U U U", 1},
 	{"U D D D U D U U U U U U U U D D D D D D D D D D U D D D U D U U U U U U U U D D D D D D D D D D U D D D U D U U U U U U U U D D D D D D D D D D",
-	 2},
+		2},
 }
-func TestCountingValleys(t *testing.T){
+
+func TestCountingValleys(t *testing.T) {
 	t.Parallel()
 
 	for _, c := range testcases {

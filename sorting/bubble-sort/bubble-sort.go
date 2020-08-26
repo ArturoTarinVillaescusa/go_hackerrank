@@ -16,9 +16,9 @@ func countSwaps(arr []int32) []int {
 	var swaps = 0
 
 	if notSorted(arr) {
-		for i=0; i< len(arr) - 1; i++ {
-			for j:=i+1; j < len(arr); j++ {
-				if (arr[i] > arr[j]) {
+		for i = 0; i < len(arr)-1; i++ {
+			for j := i + 1; j < len(arr); j++ {
+				if arr[i] > arr[j] {
 					arr[i], arr[j] = arr[j], arr[i]
 					swaps++
 				}
@@ -29,16 +29,16 @@ func countSwaps(arr []int32) []int {
 	// fmt.Println(x)
 	fmt.Printf("Array is sorted in %v swaps.\n", swaps)
 	fmt.Printf("First Element: %v\n", arr[0])
-	fmt.Printf("Last Element: %v\n", arr[len(arr) - 1])
+	fmt.Printf("Last Element: %v\n", arr[len(arr)-1])
 
-	out = []int{swaps, int(arr[0]), int(arr[len(arr) - 1])}
+	out = []int{swaps, int(arr[0]), int(arr[len(arr)-1])}
 
 	return out
 }
 
 func notSorted(arr []int32) bool {
-	for i := 0; i < len(arr) -1; i++ {
-		if arr[i] > arr [i + 1] {
+	for i := 0; i < len(arr)-1; i++ {
+		if arr[i] > arr[i+1] {
 			return true
 		}
 	}
@@ -47,7 +47,7 @@ func notSorted(arr []int32) bool {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)

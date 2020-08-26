@@ -11,8 +11,8 @@ import (
 
 // Complete the countingValleys function below.
 func countingValleys(n int32, s string) int32 {
-	result := 0;
-	level := 0;
+	result := 0
+	level := 0
 	inSeaLevel := false
 	for _, c := range s {
 		switch c {
@@ -32,14 +32,14 @@ func countingValleys(n int32, s string) int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create("/tmp/salida")
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)

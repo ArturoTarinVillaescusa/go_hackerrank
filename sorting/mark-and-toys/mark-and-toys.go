@@ -13,9 +13,9 @@ import (
 func maximumToys(prices []int32, k int32) int32 {
 	var toys int32 = 0
 	var cost int32 = 0
-	for i:=0; i<len(prices) && cost<=k; i++ {
-		if prices[i]+cost<=k {
-			cost+=prices[i]
+	for i := 0; i < len(prices) && cost <= k; i++ {
+		if prices[i]+cost <= k {
+			cost += prices[i]
 			toys++
 		}
 	}
@@ -23,14 +23,14 @@ func maximumToys(prices []int32, k int32) int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nk := strings.Split(readLine(reader), " ")
 

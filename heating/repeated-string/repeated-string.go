@@ -22,21 +22,21 @@ func repeatedString(s string, n int64) int64 {
 			}
 		}
 	}
-	result := wholeString *a_counter + remaining_a_counter
+	result := wholeString*a_counter + remaining_a_counter
 	return result
 }
 
 // aba
 // 10
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create("/tmp/salida")
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	s := readLine(reader)
 

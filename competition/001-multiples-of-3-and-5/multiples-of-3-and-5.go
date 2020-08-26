@@ -28,40 +28,39 @@ func multiplesOf3And5TimingOut(n int) {
 	fmt.Println(sum)
 }
 
-
 func addition(first, step, count int) int {
-	var last int = first + step * (count - 1);
-	return (first + last) * count / 2;
+	var last int = first + step*(count-1)
+	return (first + last) * count / 2
 }
 
 func multiplesOf3And5(n int) int {
 	x := 3
 	y := 5
-	var sumX int = addition(0, x, (n - 1) / x + 1);
-	var sumY int = addition(0, y, (n - 1) / y + 1);
-	var mcm int = minimoComunMultiplo(x, y);
-	var sumBoth int = addition(0, mcm, (n - 1) /mcm+ 1);
+	var sumX int = addition(0, x, (n-1)/x+1)
+	var sumY int = addition(0, y, (n-1)/y+1)
+	var mcm int = minimoComunMultiplo(x, y)
+	var sumBoth int = addition(0, mcm, (n-1)/mcm+1)
 	result := sumX + sumY - sumBoth
 	fmt.Println(result)
 	return result
 }
 
 func minimoComunMultiplo(a, b int) int {
-	return a * b  / maximoComunDivisor(a, b);
+	return a * b / maximoComunDivisor(a, b)
 }
 
 func maximoComunDivisor(a, b int) int {
 	if b == 0 {
-		return a;
+		return a
 	} else {
-		return maximoComunDivisor(b, a % b);
+		return maximoComunDivisor(b, a%b)
 	}
 }
 
 func main() {
 	//Enter your code here. Read input from STDIN. Print output to STDOUT
 
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	qTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)

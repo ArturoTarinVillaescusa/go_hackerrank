@@ -28,14 +28,14 @@ func jumpingOnClouds(c []int32) int32 {
 // 7
 // 0 0 1 0 0 1 0
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create("/tmp/salida")
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)
@@ -74,4 +74,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

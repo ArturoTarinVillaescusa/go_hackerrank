@@ -35,7 +35,7 @@ func countTriplets(arr []int64, r int64) int64 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 16*1024*1024)
 
 	// stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	stdout, err := os.Create("/tmp/salida")
@@ -43,7 +43,7 @@ func main() {
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 16 * 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 16*1024*1024)
 
 	nr := strings.Split(strings.TrimSpace(readLine(reader)), " ")
 

@@ -4,10 +4,10 @@ import (
 	"testing"
 )
 
-var testcases = []struct{
-	a []int32;
-	d int32;
-	out []int32;
+var testcases = []struct {
+	a   []int32
+	d   int32
+	out []int32
 }{
 	{[]int32{1, 2, 3, 4, 5}, 4, []int32{5, 1, 2, 3, 4}},
 }
@@ -24,10 +24,10 @@ func Equal(a, b []int32) bool {
 	}
 	return true
 }
-func TestLeftRotation(t *testing.T){
+func TestLeftRotation(t *testing.T) {
 	t.Parallel()
 
-	for _,c := range testcases {
+	for _, c := range testcases {
 		out := rotLeft(c.a, c.d)
 
 		if Equal(out, c.out) {
@@ -39,12 +39,12 @@ func TestLeftRotation(t *testing.T){
 	}
 }
 
-func BenchmarkLeftRotation(b *testing.B)  {
+func BenchmarkLeftRotation(b *testing.B) {
 	println(b.N)
 
 	for i := 0; i < b.N; i++ {
 
-		for _, c:= range testcases {
+		for _, c := range testcases {
 			rotLeft(c.a, c.d)
 		}
 	}

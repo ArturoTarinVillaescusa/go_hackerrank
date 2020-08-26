@@ -14,9 +14,9 @@ import (
 func minimumSwaps(arr []int32) int32 {
 	var minSwaps int32 = 0
 	for i := 0; i < len(arr); i++ {
-		if i < int(arr[i] - 1) {
+		if i < int(arr[i]-1) {
 			temp := arr[i]
-			j := int(math.Min(float64(len(arr)), float64(arr[i] - 1)))
+			j := int(math.Min(float64(len(arr)), float64(arr[i]-1)))
 			arr[i] = arr[j]
 			arr[j] = temp
 
@@ -28,14 +28,14 @@ func minimumSwaps(arr []int32) int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)
@@ -73,4 +73,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

@@ -12,8 +12,8 @@ import (
 // Complete the hourglassSum function below.
 func hourglassSum(arr [][]int32) int32 {
 	var maxVal int32 = -100000000
-	for x:= 0; x < len(arr) - 2; x++ {
-		for y := 0; y < len(arr[0]) - 2; y++ {
+	for x := 0; x < len(arr)-2; x++ {
+		for y := 0; y < len(arr[0])-2; y++ {
 			var sum int32 = 0
 			sum += arr[x][y]
 			sum += arr[x][y+1]
@@ -31,14 +31,14 @@ func hourglassSum(arr [][]int32) int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create("/tmp/salida")
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	var arr [][]int32
 	for i := 0; i < 6; i++ {
@@ -80,4 +80,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

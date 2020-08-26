@@ -19,7 +19,7 @@ func maximumProgramValue(n int32) int64 {
 
 	var result int64 = 0
 
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create("/tmp/salida")
 	// stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
@@ -52,7 +52,7 @@ func maximumProgramValue(n int32) int64 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	// stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	stdout, err := os.Create("/tmp/salida")
@@ -60,7 +60,7 @@ func main() {
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)
@@ -87,4 +87,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

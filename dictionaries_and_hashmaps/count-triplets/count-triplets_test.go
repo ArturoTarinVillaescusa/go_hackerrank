@@ -2,10 +2,10 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	arr []int64;
-	r int64;
-	out int64;
+var testcases = []struct {
+	arr []int64
+	r   int64
+	out int64
 }{
 	{[]int64{1, 4, 16, 64}, 4, 2},
 	{[]int64{1, 2, 2, 4}, 2, 2},
@@ -27,7 +27,6 @@ func TestSherlockAndAnagrams(t *testing.T) {
 	}
 }
 
-
 func BenchmarkSherlockAndAnagrams(b *testing.B) {
 	println(b.N)
 	for i := 0; i < b.N; i++ {
@@ -36,5 +35,3 @@ func BenchmarkSherlockAndAnagrams(b *testing.B) {
 		}
 	}
 }
-
-

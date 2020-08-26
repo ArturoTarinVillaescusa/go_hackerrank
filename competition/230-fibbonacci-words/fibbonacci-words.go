@@ -14,9 +14,9 @@ func fibbonacciWord(s1 string, s2 string, n int64) string {
 	var i int64
 
 	for i = 2; i <= n; i++ {
-		tmp = s1;
-		s1 += s2;
-		s2 = tmp;
+		tmp = s1
+		s1 += s2
+		s2 = tmp
 	}
 
 	return s1
@@ -25,7 +25,7 @@ func fibbonacciWord(s1 string, s2 string, n int64) string {
 func main() {
 	//Enter your code here. Read input from STDIN. Print output to STDOUT
 
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	qTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)

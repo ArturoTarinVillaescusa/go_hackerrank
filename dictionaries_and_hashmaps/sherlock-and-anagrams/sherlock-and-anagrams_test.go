@@ -2,9 +2,9 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	s string;
-	out int32;
+var testcases = []struct {
+	s   string
+	out int32
 }{
 	{"cdcd", 5},
 	{"ifailuhkqq", 3},
@@ -27,7 +27,6 @@ func TestSherlockAndAnagrams(t *testing.T) {
 	}
 }
 
-
 func BenchmarkSherlockAndAnagrams(b *testing.B) {
 	println(b.N)
 	for i := 0; i < b.N; i++ {
@@ -36,4 +35,3 @@ func BenchmarkSherlockAndAnagrams(b *testing.B) {
 		}
 	}
 }
-

@@ -2,10 +2,10 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	n int32;
-	queries [][]int32;
-	out int64;
+var testcases = []struct {
+	n       int32
+	queries [][]int32
+	out     int64
 }{
 	{5, [][]int32{
 		{1, 2, 100},
@@ -29,7 +29,7 @@ var testcases = []struct{
 		{2321, 3289, 363503},
 		{1975, 2754, 374161},
 		{3283, 3759, 45954},
-		{711,3596, 978769},
+		{711, 3596, 978769},
 		{1468, 3899, 109177},
 		{1044, 2661, 538264},
 		{1182, 1224, 795164},
@@ -44,8 +44,6 @@ var testcases = []struct{
 		{1454, 1980, 443860},
 		{596, 2677, 745394},
 	}, 5396102},
-
-
 }
 
 func TestArrayManipulation(t *testing.T) {
@@ -54,7 +52,7 @@ func TestArrayManipulation(t *testing.T) {
 	for _, c := range testcases {
 		out := arrayManipulation(c.n, c.queries)
 
-		if (out != c.out) {
+		if out != c.out {
 			t.Errorf("Fail!!!: %v was expected for %v, but we obtained %v", c.out, c.queries, out)
 		} else {
 			t.Logf("Success!!!: The function returned %v for %v", c.out, c.queries)

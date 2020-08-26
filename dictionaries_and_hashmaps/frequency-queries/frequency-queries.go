@@ -50,7 +50,7 @@ func freqQuery(queries [][]int32) []int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 16*1024*1024)
 
 	// stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	stdout, err := os.Create("/tmp/salida")
@@ -58,7 +58,7 @@ func main() {
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 16 * 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 16*1024*1024)
 
 	qTemp, err := strconv.ParseInt(strings.TrimSpace(readLine(reader)), 10, 64)
 	checkError(err)
@@ -66,7 +66,7 @@ func main() {
 
 	var queries [][]int32
 	for i := 0; i < int(q); i++ {
-		queriesRowTemp := strings.Split(strings.TrimRight(readLine(reader)," \t\r\n"), " ")
+		queriesRowTemp := strings.Split(strings.TrimRight(readLine(reader), " \t\r\n"), " ")
 
 		var queriesRow []int32
 		for _, queriesRowItem := range queriesRowTemp {
@@ -88,7 +88,7 @@ func main() {
 	for i, ansItem := range ans {
 		fmt.Fprintf(writer, "%d", ansItem)
 
-		if i != len(ans) - 1 {
+		if i != len(ans)-1 {
 			fmt.Fprintf(writer, "\n")
 		}
 	}
@@ -112,4 +112,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

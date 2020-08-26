@@ -2,9 +2,9 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	arr []int32;
-	out int32;
+var testcases = []struct {
+	arr []int32
+	out int32
 }{
 	{[]int32{4, 3, 1, 2}, 3},
 	{[]int32{1, 3, 5, 2, 4, 6, 7}, 3},
@@ -14,7 +14,7 @@ var testcases = []struct{
 func TestMinimumSwaps(t *testing.T) {
 	t.Parallel()
 
-	for _, c:= range testcases {
+	for _, c := range testcases {
 		out := minimumSwaps(c.arr)
 
 		if out != c.out {

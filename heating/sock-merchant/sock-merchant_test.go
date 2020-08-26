@@ -4,9 +4,9 @@ import (
 	"testing"
 )
 
-var testcases = []struct{
-	in []int32;
-	out int32;
+var testcases = []struct {
+	in  []int32
+	out int32
 }{
 	{[]int32{10, 20, 20, 10, 10, 30, 50, 10, 20}, 3},
 	{[]int32{10, 20, 20, 10, 7, 7, 7, 27, 10, 30, 50, 10, 20}, 4},

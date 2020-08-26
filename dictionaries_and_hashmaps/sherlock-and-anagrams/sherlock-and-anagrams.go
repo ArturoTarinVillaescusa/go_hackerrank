@@ -49,7 +49,7 @@ func sherlockAndAnagrams(s string) int32 {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	// stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	stdout, err := os.Create("/tmp/salida")
@@ -57,7 +57,7 @@ func main() {
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	qTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)
@@ -67,26 +67,26 @@ func main() {
 		s := readLine(reader)
 
 		/*
-		2
-		abba
-		abcd
+			2
+			abba
+			abcd
 
-		out:
-		4
-		0
+			out:
+			4
+			0
 
-		2
-		ifailuhkqq
-		kkkk
+			2
+			ifailuhkqq
+			kkkk
 
-		out:
-		3
-		10
+			out:
+			3
+			10
 
-		1
-		cdcd
-		out:
-		5
+			1
+			cdcd
+			out:
+			5
 		*/
 		result := sherlockAndAnagrams(s)
 
@@ -110,4 +110,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-

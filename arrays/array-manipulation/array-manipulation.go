@@ -15,36 +15,36 @@ func arrayManipulation(n int32, queries [][]int32) int64 {
 	var arr [10000000]int64
 
 	for i := 0; i < len(queries); i++ {
-		a := queries[i][0];
-		b := queries[i][1];
-		k := queries[i][2];
+		a := queries[i][0]
+		b := queries[i][1]
+		k := queries[i][2]
 		arr[a] += int64(k)
 		arr[b+1] -= int64(k)
 	}
-	max := getMax(arr);
-	return int64(max);
+	max := getMax(arr)
+	return int64(max)
 
 }
 
 func getMax(arr [10000000]int64) float64 {
-	var max float64 = -10000000;
-	var sum float64 = 0;
+	var max float64 = -10000000
+	var sum float64 = 0
 	for i := 0; i < len(arr); i++ {
-		sum += float64(arr[i]);
-		max = math.Max(max, sum);
+		sum += float64(arr[i])
+		max = math.Max(max, sum)
 	}
-	return max;
+	return max
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
 	checkError(err)
 
 	defer stdout.Close()
 
-	writer := bufio.NewWriterSize(stdout, 1024 * 1024)
+	writer := bufio.NewWriterSize(stdout, 1024*1024)
 
 	nm := strings.Split(readLine(reader), " ")
 

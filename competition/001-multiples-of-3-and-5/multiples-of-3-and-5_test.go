@@ -2,15 +2,15 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	n int;
-	out int;
-} {
+var testcases = []struct {
+	n   int
+	out int
+}{
 	{10, 23},
 	{100, 2318},
 }
 
-func TestMultiplesOf3And5(t *testing.T)  {
+func TestMultiplesOf3And5(t *testing.T) {
 	t.Parallel()
 
 	for _, c := range testcases {

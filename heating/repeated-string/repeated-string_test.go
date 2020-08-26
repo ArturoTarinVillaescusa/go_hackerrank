@@ -2,19 +2,20 @@ package main
 
 import "testing"
 
-var testcases = []struct{
-	s string;
-	n int64;
-	out int64;
+var testcases = []struct {
+	s   string
+	n   int64
+	out int64
 }{
 	{"aba", 10, 7},
 	{"abac", 100, 50},
 	{"a", 1000000000000, 1000000000000},
 }
+
 func TestRepeatedString(t *testing.T) {
 	t.Parallel()
 
-	for _,c := range testcases {
+	for _, c := range testcases {
 		out := repeatedString(c.s, c.n)
 
 		if out != c.out {
@@ -27,8 +28,8 @@ func TestRepeatedString(t *testing.T) {
 
 func BenchmarkRepeatedString(b *testing.B) {
 	println(b.N)
-	for i :=0; i < b.N; i++ {
-		for _, c:= range testcases {
+	for i := 0; i < b.N; i++ {
+		for _, c := range testcases {
 			repeatedString(c.s, c.n)
 		}
 	}

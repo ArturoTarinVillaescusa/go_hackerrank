@@ -11,34 +11,34 @@ import (
 
 // Complete the minimumBribes function below.
 func minimumBribes(q []int32) int {
-	cnt := 0;
+	cnt := 0
 	var temp int32
 	for i := len(q) - 1; i >= 0; i-- {
-		if(q[i] != int32(i + 1)) {
-			if(((i - 1) >= 0) && q[i - 1] == int32(i + 1)) {
-				cnt++;
+		if q[i] != int32(i+1) {
+			if ((i - 1) >= 0) && q[i-1] == int32(i+1) {
+				cnt++
 				// swap q[i-1] and q[i]
 				temp = q[i-1]
-				q[i - 1] = q[i]
+				q[i-1] = q[i]
 				q[i] = temp
 
-			} else if(((i - 2) >= 0) && q[i - 2] == int32(i + 1)) {
-				cnt += 2;
-				q[i - 2] = q[i - 1];
-				q[i - 1] = q[i];
-				q[i] = int32(i + 1);
+			} else if ((i - 2) >= 0) && q[i-2] == int32(i+1) {
+				cnt += 2
+				q[i-2] = q[i-1]
+				q[i-1] = q[i]
+				q[i] = int32(i + 1)
 			} else {
-				fmt.Println("Too chaotic");
-				return -1;
+				fmt.Println("Too chaotic")
+				return -1
 			}
 		}
 	}
-	fmt.Println(cnt);
-	return cnt;
+	fmt.Println(cnt)
+	return cnt
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	tTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
 	checkError(err)
@@ -78,4 +78,3 @@ func checkError(err error) {
 		panic(err)
 	}
 }
-
