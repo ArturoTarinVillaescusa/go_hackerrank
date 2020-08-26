@@ -20,12 +20,12 @@ func angryProfessor(k int32, a []int32) string {
 
 	count  := int32(0)
 	for i := range a {
-		if a[i] >= 0 {
+		if a[i] <= 0 {
 			count++
 		}
 	}
 	fmt.Printf("Verify wether the professor will be angry with the %v threshold and the %v arriving times ...\n", k, a)
-	if count <= k {
+	if count >= k {
 		return "YES"
 	} else {
 		return "NO"
